@@ -1,5 +1,14 @@
 require 'pry'
 
-def my_find(collection)
-
+def hello(array)
+  i = 0
+  collection = []
+  while i < array.length
+    collection << yield(array[i])
+    i
+  end
+  collection
 end
+
+
+hello(["Tim", "Tom", "Jim"]) { |name| puts "Hi, #{name}" }
